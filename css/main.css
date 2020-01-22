@@ -1,20 +1,21 @@
 @charset "utf-8";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(./fontello.css);
 @import url(./normalize.css);
 /* 기본 박스 사이징 재 설정 
 (width에 border-width와 padding을 포함하여 계산) */
 *, *::before, *::after{
   box-sizing: border-box;
 }
-/*숨김 컨첸츠*/
+/* 숨김 콘텐츠 */
 .a11y-hidden{
-   position: absolute;
-   top:-9999px;
-   width:1px;
-   height:1px;
-   overflow: hidden;
-   margin:-1px;
-   clip: rect(0,0,0,0);
-   clip-path:polygon(0 0, 0 0, 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0,0,0,0);
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 /* CSS Module */
 /* float 이슈를 해결하기 위한 CSS 선언 */
@@ -23,18 +24,20 @@
   content: "";
   clear: both;
 }
-/* 기본설정 */
+/* 기본 설정 */
 a{
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 html{
-  font-size:10px;
+  font-size: 10px;
 }
 body{
-  font-size:1.4rem;
-  color:#181818;
+  font-size: 1.4rem;
+  color: #181818;
   background-color: #fff;
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
+  font-weight: 300;
 }
 
 .container{
@@ -50,45 +53,168 @@ body{
 }
 .header{
   background-color: #fff;
-  border-radius:0 0 15px 15px;  
-  padding:0 30px;
+  border-radius: 0 0  15px 15px;
+  padding: 0 30px;
   position: relative;
+}
 
-}
+/* 로고 */
 .logo{
-  margin:0;
+  margin: 0;
   position: absolute;
-  top:40px;
-  left:60px;
+  top: 45px;
+  left: 62px;
+  /* z-index: 10; */
 }
-/* 멤버 */
+/* 멤버 링크 */
 .member{
-  margin:0;
-  padding:2px 0;
-  list-style:none;
-  font-size:0;
-  text-align:right;
-  position:relative;
-  right:-10px;
+  margin: 0;
+  padding: 2px 0;
+  list-style-type: none;
+  text-align: right;
+  font-size: 0;
+  position: relative;
+  right: -10px;
 }
-.member li, .member li a{
-  display:inline-block;
-} 
+.member li, .member a{
+  display: inline-block;
+}
 .member li{
-  text-align:right;
-  font-size:1.4rem;
+  font-size: 1.4rem;
 }
 .member li:nth-child(n+2)::before{
-  content:":";
-  margin:0 2px;
+  content: ":";
+  margin: 0 2px;
 }
 .member a{
   text-transform: uppercase;
   padding: 8px 10px;
 }
+/* 메인 메뉴 */
+.navigation{
+  padding-bottom: 50px;
+}
+.menu{
+  height: 47px;
+  list-style: none;
+  padding-left: 229px;
+  margin: 0;
+  border-top: 2px solid #000;
+  background: linear-gradient(to bottom, #E8852E 0%,#ED552F 35%,#ED552F 70%,#E8852E 100%);
+  background-color: #ED552F;
+  /* box-shadow: 0 -10px 0 0 #000; */
+}
+.menu-item{
+  outline: none;
+  position: relative;
+  float: left;
+  border-left: 2px solid rgba(255,255,255,0.3);
+}
+.menu-button{
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 45px;
+  padding: 0 20px;
+  display: block;
+  text-shadow: 
+              1px 0 0 #000, 
+              -1px 0 0 #000,
+              0 1px 0 #000, 
+              0 -1px 0 #000;
+  cursor: pointer;
+}
+.menu-act .menu-button{
+  color: #ff0;
+}
+.menu-act .menu-button::after{
+  content: "";
+  display: block;
+  border-top: 2px solid #000;
+  background-color: green;
+}
+.submenu{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  position: absolute;
+  display: none;
+  white-space: nowrap;
+  top: 47px;
+}
+.menu-act .submenu{
+  display: block;
+}
+.menu li:nth-child(-n+3) .submenu{
+  left: 0;
+}
+.menu li:nth-child(n+4) .submenu{
+  right: 0;
+}
+.submenu li, .submenu a{
+  display: inline-block;
+}
+.submenu a{
+  padding: 8px 10px;
+}
 .visual{
   background-color: lime;
-  height: 10vh;
+  height: 120px;
+  position:relative;
+}
+@keyframes bgAni{
+  0%{opacity:1;}
+  0%{opacity:0.5;}
+  100%{opacity:0;}
+}
+.visual::before, .visual::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-repeat:no-repeat;
+  animation:bgAni 2s infinite alternate;
+}
+/* 위와같이 가상요소로 상자를 만든다 */
+.visual::before{
+  background-image:
+  url(./images/ani_flower_01.png),
+  url(./images/ani_flower_02.png);
+  background-position: 0 -10px, 670px 0;
+
+}
+.visual::after{
+  background-image:
+  url(./images/ani_flower_03.png),
+  url(./images/ani_flower_04.png);
+  background-position: 300px 0, 800px 0;
+  animation-delay: 1s;
+}
+@keyframes textAni{
+  0%{
+
+    font-size:12px;
+    color: rgba(0,0,0,0);
+    transform: translate(0,0);
+  }
+  100%{
+    font-size:24px;
+    color: rgba(0,0,0,1);
+    transform: translate(400px,80px);
+  }
+}
+.visual-text{
+  display:inline-block;
+  position:absolute;
+  background-color: yellow;
+  animation-name:textAni;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 1000ms;
+  color: rgba(0,0,0,0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .main{
   display: flex;
@@ -97,7 +223,7 @@ body{
   justify-content: space-around;
   height: 60vh;
   padding: 30px 15px;
-  background-color: #ffffff;
+  background-color: #fff;
   /* padding: 30px 15px; */
 }
 
@@ -124,11 +250,12 @@ body{
 }
 .footer-bg{
   background-color: purple;
- /* width: 100vw;
-   display: flex;
+  width: 100vw;
+  /* display: flex;
   flex-direction: row;
   justify-content: center; */
 }
 .footer{
   background-color: yellow;
   height: 10vh;
+}
