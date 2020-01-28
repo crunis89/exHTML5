@@ -221,7 +221,6 @@ body{
   /* flex-direction: row; */
   flex-flow: row wrap;
   justify-content: space-around;
-  height: 60vh;
   padding: 30px 15px;
   background-color: #fff;
   /* padding: 30px 15px; */
@@ -233,24 +232,220 @@ body{
   margin: 0 15px; */
 }
 .group1{
-  background-color: tomato;
   width: 250px;
 }
 .group2{
-  background-color: skyblue;
   width: 380px;
 }
 .group3{
   background-color: pink;
   width: 190px;
 }
+/* 로그인 */
+.login{
+  background-color: #ed552f;
+  background-image: radial-gradient(circle at right top, #e8852e, #ed552f);
+  box-shadow: 5px 5px 0 0 #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+.login-heading{
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ff0;
+  text-indent: 10px;
+}
+.login-form{
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+}
+.login-form fieldset{
+  position: relative;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
+}
+.user-email, .user-pw{
+  margin-bottom: 5px;
+}
+.login-form label{
+  width: 4em;
+  display: inline-block;
+}
+.login-form input{
+  width: 90px;
+  height: 22px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+}
+.btn-login{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ed552f;
+  border-radius: 3px;
+  background-color: #e8852e;
+  color: #fff;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.sign{
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 2px 10px;
+  font-size: 1.3rem;
+}
+.sign .icon-right-open::before{
+  color: #ed552f;
+  margin: 0;
+}
+.sign a{
+  display: inline-block;
+  padding: 8px 0;
+}
+.validation-list{
+  margin:25px 0 0 0;
+  padding-left:0;
+  list-style:none;
+}
+.validation-list li{
+
+
+}
+.validation-list a{
+    display: block;
+    border: 1px solid #aaa;
+    border-radius: 35px;
+    margin-top: 10px;
+    padding: 7px 10px 8px 45px;
+    background: url(./images/validation_icon.png) no-repeat 20px 50%,
+    #ccc 
+    linear-gradient(180deg, #bbb, #eee);
+  /*위에서 아래로 줄때는 180deg이기 때문에 굳이 줄 필요없다*/
+}
+/* 웹관련 용어 */
+.term{
+  background:yellow;
+  padding:15px;
+  background:
+  #ccc linear-gradient(180deg, #bbb, #eee);
+  border:1px solid #aaa;
+  border-radius:5px;
+  margin-top:20px;
+}
+.term h2{
+  margin:0 0 15px 0;
+  font-size:1.6rem;
+}
+.term .term-list{
+  margin:0;
+}
+.term .term-list::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.term .term-list-subject{
+  float:right;
+  color:#296897;
+  font-weight:400;
+  margin-bottom:10px;
+  margin-top:-3px;
+}
+.term .term-list dd{
+  margin-left:0;
+  font-size:1em;
+}
+.term dl .term-list-thumbnail{
+  float:left;
+  background:lime;
+}
+.term dl .term-list-thumbnail img{
+  vertical-align: top;
+  /*이미지 크기 잡을때는 이미지가 인라인 속성이기 때문에 버티컬얼라인 탑 
+  또는 display:block를 준다*/
+}
+.term dl .term-list-brief{
+  float:right;
+  line-height:1.4em;
+}
+.term .term-list-subject, .term-list-brief{
+  width:145px;
+}
+.even{
+  margin-top:15px;
+}
+.even .term-list-subject{
+  float:left;
+}
+.even .term-list-thumbnail{
+  float:right;
+}
+.term .even .term-list-brief{
+  float:left;
+}
+.term .even .term-list-thumbnail{
+  float:right;
+}
+/* 검색 창 */
+.search-form{
+  border:1px solid #aaa;
+  background: #ccc linear-gradient(180deg, #bbb, #eee); 
+  border-radius:15px 15px 0 0;
+  border-bottom-color: #fff;
+  padding:15px 25px 10px 25px;
+
+}
+.search-form fieldset{
+  border:0;
+  padding:0;
+  margin:0;
+
+}
+.search-form fieldset label{
+
+}
+.search-form input[type="search"]{
+  height:24px;
+  width:190px;
+  margin:0 4px;
+  padding: 1px 1px 1px .5em;
+}
+.search-form label, .search-form input[type="search"], .btn-search{
+  vertical-align: middle;
+}
+.search-form input[type="search"] .btn-search{
+  height:24px;
+  border:1px solid #aaa;
+  border-radius:3px;
+
+}
+.btn-search{
+  color:#fff;
+  padding:0 8px;
+  font-size:1.2rem;
+  background:#333;
+}
+/*슬로건*/
 .slogan{
   background-color: orange;
   height: 10vh;
 }
 .footer-bg{
   background-color: purple;
-  width: 100vw;
   /* display: flex;
   flex-direction: row;
   justify-content: center; */
