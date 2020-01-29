@@ -402,43 +402,114 @@ body{
 }
 /* 검색 창 */
 .search-form{
-  border:1px solid #aaa;
-  background: #ccc linear-gradient(180deg, #bbb, #eee); 
-  border-radius:15px 15px 0 0;
-  border-bottom-color: #fff;
-  padding:15px 25px 10px 25px;
-
+  background: #ccc linear-gradient(180deg, #bbb, #eee);
+  border: 1px solid #aaa;
+  border-bottom: #fff;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px 25px;
 }
 .search-form fieldset{
-  border:0;
-  padding:0;
-  margin:0;
-
-}
-.search-form fieldset label{
-
+  border: 0;padding: 0; margin: 0;
 }
 .search-form input[type="search"]{
-  height:24px;
-  width:190px;
-  margin:0 4px;
+  width: 190px;
+  margin: 0 4px;
   padding: 1px 1px 1px .5em;
 }
 .search-form label, .search-form input[type="search"], .btn-search{
   vertical-align: middle;
 }
-.search-form input[type="search"] .btn-search{
-  height:24px;
-  border:1px solid #aaa;
-  border-radius:3px;
-
+.search-form input[type="search"], .btn-search{
+  height: 24px; border: 1px solid #aaa; border-radius: 3px;
 }
 .btn-search{
-  color:#fff;
-  padding:0 8px;
-  font-size:1.2rem;
-  background:#333;
+  color: #fff;
+  background-color: #333;
+  padding: 0 8px;
+  font-size: 1.2rem;
 }
+/* 공지사항 및 자료실 */
+.board{
+  width:380px;
+  position:relative;  
+  padding-top:45px;
+}
+.notice-list, .notice-more, .pds-list, .pds-more{
+  display:none;
+}
+.board-act .notice-list, .board-act .notice-more,
+.board-act .pds-list, .board-act .pds-more{
+  display:block;
+}
+.tab{
+  font-weight:400;
+  margin:0;
+  font-size:1.4rem;
+  position: absolute;
+  top:0;
+}
+.tab a{
+  display:block;
+  padding:8px 10px;
+  border:1px solid #aaa;
+  border-radius:5px 5px 0 0;
+  color:#888;
+  background:#ccc linear-gradient(180deg, #bbb, #eee);
+  /* 그라디언트속성을 지원안할경우 대비해 앞에 #ccc 처럼 배경을 넣어논다 */
+}
+.board-act .tab a{
+  background:#fff;
+  color:#ed552f;
+  border-color:#ed552f #ed552f #fff #ed552f;
+}
+.notice-heading{
+  left:0;
+}
+.pds-heading{
+  left:76px;
+}
+.notice-list, .pds-list{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+.notice-list li, .pds-list li{
+  margin-bottom:8px;
+  /* overflow:hidden; */
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+
+}
+.notice-list li::before, .pds-list li::before{
+  /* float:left; */
+}
+.notice-list a, .pds-list a{
+  /* float:left;
+  width:280px; */
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* white-space,text-overflow,overflow 이세개는 세트로 다녀야된다 */
+}
+.notice-list time, .pds-list time{
+  /* float:right; */
+  /* margin-left:auto;   */
+}
+
+.notice-more, .pds-more{
+  position: absolute;
+  top:-8px;
+  right:-8px;
+  padding:8px;
+}
+.notice-more .icon-plus, .pds-more .icon-plus{
+  color: hsla(110deg, 50%, 30%, 1)
+  /* hsla 3번째는 명도, 공부해보기 */
+}
+
 /*슬로건*/
 .slogan{
   background-color: orange;
